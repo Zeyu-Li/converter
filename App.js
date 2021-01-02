@@ -1,12 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Converter from './src/components/Converter'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={[styles.containerTitle]}>Convert</Text>
+      <Converter />
+        <View style={styles.convertContainer}>
+          <StatusBar style="auto" />
+        </View>
     </View>
   );
 }
@@ -14,8 +18,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#242424',
     alignItems: 'center',
-    justifyContent: 'center',
+  },
+  containerTitle: {
+    color: '#ededed',
+    fontSize: 64,
+    paddingTop: 40,
+    flex: 1,
+  },
+  convertContainer: {
+    flex: 1,
   },
 });
