@@ -1,5 +1,5 @@
 import React, {Component, useEffect, useState} from 'react';
-import { StyleSheet, Text, TextInput, View, Image, Dimensions, Button, Switch } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Image, Dimensions, Button, Switch, TouchableOpacity  } from 'react-native';
 import convert from 'convert-units'
 
 const Converter = () => {
@@ -59,7 +59,14 @@ const Converter = () => {
                 }}/>
             </View>
             <TextInput keyboardType={'numeric'} placeholder={name1()} style={[styles.containerInput]} value={num1} onChange={e => changeNum1(e.target.value)} />
-            <Image style={[styles.image]} source={require('@expo/../../assets/img/spoon.svg')} />
+            {/* touch image to switch conversion type */}
+            <TouchableOpacity onPress={()=>{
+                let tmp = firstValue;
+                value1(secondValue);
+                value2(tmp);
+            }}>
+                <Image style={[styles.image]} source={require('@expo/../../assets/img/switch.svg')} />
+            </TouchableOpacity>
             <TextInput editable={false} keyboardType={'numeric'} placeholder={name2()} style={[styles.containerInput]} value={num2} onChange={e => changeNum2(e.target.value)} />
             <View style={[styles.button]}>
                 <Button title={`Change from `+ name2()} style={[styles.button]} onPress={() => {
@@ -69,7 +76,7 @@ const Converter = () => {
                     value2(c => c+change)
                 }}/>
             </View>
-            {/* TODO: Red reset button and switch button */}
+            {/* Red reset button and switch button */}
             <Button title='    Reset    ' onPress={() => {changeNum1(""); changeNum2("")}} color="#ff1938"/>
         </View>
     );
@@ -77,6 +84,23 @@ const Converter = () => {
 
 
 const styles = StyleSheet.create({
+    switch: {
+        margin: 10,
+    },
+    masterSwitch: {
+        flex:1,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        padding: 2,
+        // borderWidth: 2,
+        // borderRadius: 4,
+        // backgroundColor: '#474747',
+    },
+    regularText: {
+        color: '#ededed',
+        fontSize: 20,
+        margin: 5,
+    },
     convert: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -101,9 +125,9 @@ const styles = StyleSheet.create({
         elevation: 19,
     },
     image: {
-        width: Dimensions.get('window').width / 2.5 ,
-        height: Dimensions.get('window').width / 2.5 * (264/400),
-        maxHeight: Dimensions.get('window').height / 2.5 * (264/400),
+        width: Dimensions.get('window').width / 1.5 ,
+        height: Dimensions.get('window').width / 1.5 * (315/1016),
+        maxHeight: Dimensions.get('window').height / 1.5 * (315/1016),
         resizeMode: 'stretch',
         margin: 25,
     },
@@ -120,19 +144,6 @@ const styles = StyleSheet.create({
         // shadowRadius: 5,
 
         // elevation: 19,
-    },
-    switch: {
-        margin: 10,
-    },
-    masterSwitch: {
-        flex:1,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-    },
-    regularText: {
-        color: '#ededed',
-        fontSize: 20,
-        margin: 5,
     },
 });
 
