@@ -6,7 +6,7 @@ import Converter from './src/components/Converter'
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={[styles.containerTitle]}>Convert</Text>
+      <Text style={[styles.containerTitle]}>Convertor</Text>
       <Converter />
         <View style={styles.convertContainer}>
           <StatusBar style="auto" />
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   containerTitle: {
     color: '#ededed',
     fontSize: 64,
-    paddingTop: 40,
+    paddingTop: 20,
     flex: 1,
   },
   convertContainer: {
