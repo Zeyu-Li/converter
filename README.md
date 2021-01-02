@@ -1,4 +1,4 @@
-# Convertor
+# Converter
 
 An app that can convert measurements ie from teaspoon to table spoon
 
