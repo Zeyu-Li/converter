@@ -75,7 +75,7 @@ const Converter = () => {
                 value1(secondValue);
                 value2(tmp);
             }}>
-                <Image style={[styles.image]} source={require('@expo/../../assets/img/switch.svg')} />
+                <Image style={[styles.image]} source={require('@expo/../../assets/img/switcher.png')} />
             </TouchableOpacity>
             {/* output field, locked/uneditable */}
             <TextInput editable={false} keyboardType={'numeric'} placeholder={name2()} style={[styles.containerInput]} value={num2} onChange={e => changeNum2(e.target.value)} />
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
         width: Dimensions.get('window').width / 1.5 ,
         height: Dimensions.get('window').width / 1.5 * (315/1016),
         maxHeight: Dimensions.get('window').height / 1.5 * (315/1016),
-        resizeMode: 'stretch',
+        resizeMode: 'contain',
         margin: 25,
     },
     button: {
