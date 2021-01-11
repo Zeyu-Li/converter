@@ -1,6 +1,7 @@
 import React, {Component, useEffect, useState} from 'react';
 import { StyleSheet, Text, TextInput, View, Image, Dimensions, Button, Switch, TouchableOpacity  } from 'react-native';
-import convert from 'convert-units'
+import convert from 'convert-units';
+import SvgComponent from './Img.js';
 
 // TODO: select picker with npm install @react-native-picker/picker --save
 
@@ -75,7 +76,8 @@ const Converter = () => {
                 value1(secondValue);
                 value2(tmp);
             }}>
-                <Image style={[styles.image]} source={require('@expo/../../assets/img/switcher.png')} />
+                {/* <Image style={[styles.image]} source={require('@expo/../../assets/img/switcher.png')} /> */}
+                <SvgComponent width={Dimensions.get('window').width / 1.5} />
             </TouchableOpacity>
             {/* output field, locked/uneditable */}
             <TextInput editable={false} keyboardType={'numeric'} placeholder={name2()} style={[styles.containerInput]} value={num2} onChange={e => changeNum2(e.target.value)} />
