@@ -6,11 +6,7 @@ import Converter from './src/components/Converter'
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={[styles.containerTitle]}>Converter</Text>
       <Converter />
-        <View style={styles.convertContainer}>
-          <StatusBar style="auto" />
-        </View>
     </View>
   );
 }
