@@ -8,7 +8,7 @@ Click on the blue buttons to cycle through different items. Click Reset to set v
 
 ## Use
 
-To start emulation, use `expo start`
+To start emulation, use `yarn start` (Node 22.13+ or 24.3+)
 
 ## Lib
 
